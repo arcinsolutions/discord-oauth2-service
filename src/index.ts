@@ -114,7 +114,7 @@ WebServer.get(ENDPOINTS.AUTH, async (request, reply) => {
 
     if (RESPONSE_STRATEGY === 'json') {
         users[state] = user;
-        reply.type('application/json').code(200);
+        reply.redirect('https://arcin.solutions/invite-successful/')
         return { status: true, message: 'Authorization Complete!' };
     }
 
