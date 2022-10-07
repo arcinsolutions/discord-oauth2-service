@@ -101,7 +101,7 @@ WebServer.get(ENDPOINTS.AUTH, async (request, reply) => {
         },
     });
 
-    if (!userResult.ok) {
+    /*if (!userResult.ok) {
         reply.type('application/json').code(401);
         return { status: false, message: 'Authorization token must have expired.' };
     }
@@ -110,10 +110,10 @@ WebServer.get(ENDPOINTS.AUTH, async (request, reply) => {
     if (typeof user === 'undefined') {
         reply.type('application/json').code(401);
         return { status: false, message: 'Authorization token must have expired.' };
-    }
+    }*/
 
     if (RESPONSE_STRATEGY === 'json') {
-        users[state] = user;
+        /*users[state] = user;*/
         reply.redirect('https://arcin.solutions/invite-successful/')
         return { status: true, message: 'Authorization Complete!' };
     }
