@@ -61,7 +61,7 @@ function getURL(): string {
 WebServer.get(ENDPOINTS.AUTH, async (request, reply) => {
     const { code, state }: { code?: string; state?: string } = request.query;
 
-    if (typeof code === 'undefined' || typeof state === 'undefined') {
+    if (typeof code === 'undefined') {
         reply.type('application/json').code(401);
         return { status: false, message: 'Code and state for authentication were not provided.' };
     }
